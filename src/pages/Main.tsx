@@ -25,7 +25,7 @@ function Main() {
                   hasNext={hasNextPage}
                   fetchNextPage={fetchNextPage}
                   name={product.productName}
-                  image={process.env.REACT_APP_API_URL + product.image}
+                  image={process.env.REACT_APP_PATH || '' + product.image}
                   description={product.description}
                   price={product.price}
                 />
