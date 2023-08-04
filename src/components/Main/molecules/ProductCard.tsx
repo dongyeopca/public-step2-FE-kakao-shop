@@ -25,7 +25,7 @@ function ProductCard({ name, image, description, price, isLast, fetchNextPage, h
   }, [isIntersecting]);
   return (
     <Wrap ref={targetRef}>
-      <Picture src={staticServerUrl + image} width={200} height={200} alt={name + '이미지'} />
+      <Picture src={staticServerUrl + '/api' + image} width={200} height={200} alt={name + '이미지'} />
       <ProductName>{name}</ProductName>
       <ProductDescription>{description}</ProductDescription>
       <ProductPrice>{price}원~</ProductPrice>

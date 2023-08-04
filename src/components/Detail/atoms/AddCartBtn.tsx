@@ -8,6 +8,7 @@ import { optionState } from '../../../modules/options';
 import { reset } from '../../../modules/options';
 import ToastBox, { IToastData } from '../../common/ToastBox';
 import { useNavigate } from 'react-router-dom';
+import staticServerUrl from '../../../constants/staticUrl';
 export interface cartData {
   optionId: number;
   quantity: number;
@@ -33,7 +34,7 @@ function AddCartBtn() {
         throw new Error('장바구니에 담기를 실패하였습니다.');
       }
     } else {
-      navigate('/login');
+      navigate(staticServerUrl + '/login');
     }
   };
 

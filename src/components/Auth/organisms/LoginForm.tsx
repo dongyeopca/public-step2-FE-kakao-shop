@@ -11,6 +11,7 @@ import { styled } from 'styled-components';
 import colors from '../../../constants/colors';
 import { login } from '../../../modules/auth';
 import { useDispatch } from 'react-redux';
+import staticServerUrl from '../../../constants/staticUrl';
 
 function LoginForm() {
   const navigate = useNavigate();
@@ -36,7 +37,7 @@ function LoginForm() {
       };
       const response: AuthResponse = await instance.post('/login', JSON.stringify(loginData));
       if (response.success) {
-        if (response.token && dispatch(login(response.token))) navigate('/');
+        if (response.token && dispatch(login(response.token))) navigate(staticServerUrl + '/');
       } else {
         setErrorMessage(response.error?.message);
       }

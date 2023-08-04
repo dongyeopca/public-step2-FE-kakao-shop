@@ -8,6 +8,7 @@ import { styled } from 'styled-components';
 import colors from '../../../constants/colors';
 import { AuthResponse } from '../../../types/Auth';
 import { useNavigate } from 'react-router-dom';
+import staticServerUrl from '../../../constants/staticUrl';
 
 function SignupForm() {
   const navigate = useNavigate();
@@ -68,7 +69,7 @@ function SignupForm() {
       }
       const data: AuthResponse = await instance.post('/join', JSON.stringify(signUpData));
       if (data.success) {
-        navigate('/');
+        navigate(staticServerUrl + '/');
       } else {
         setIsValidEmail(false);
         setErrorMessage(data.error?.message);

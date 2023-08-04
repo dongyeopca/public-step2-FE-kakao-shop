@@ -3,6 +3,7 @@ import { useQueryClient, useMutation } from 'react-query';
 import { Pay } from '../../../api/Pay';
 import Spinner from '../../common/atoms/Spinner';
 import queryKey from '../../../constants/queryKey';
+import staticServerUrl from '../../../constants/staticUrl';
 
 function PayBtn({ approved }: { approved: boolean }) {
   const navigator = useNavigate();
@@ -10,7 +11,7 @@ function PayBtn({ approved }: { approved: boolean }) {
   const payMutation = useMutation(() => Pay(), {
     onSuccess: (data) => {
       queryClient.setQueryData(queryKey.Pay, data.response);
-      navigator('/paySuccess');
+      navigator(staticServerUrl + '/paySuccess');
     },
     onError: () => {
       alert('결제실패');

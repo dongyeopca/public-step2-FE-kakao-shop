@@ -7,6 +7,7 @@ import OrderBtn from '../components/Cart/atoms/OrderBtn';
 import { useSelector } from 'react-redux';
 import { RootState } from '..';
 import { useNavigate } from 'react-router-dom';
+import staticServerUrl from '../constants/staticUrl';
 
 function Cart() {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ function Cart() {
   });
   useEffect(() => {
     if (!isLogin) {
-      navigate('/login');
+      navigate(staticServerUrl + '/login');
     }
   }, []);
   if (!data) return null;

@@ -8,6 +8,7 @@ import { getCart } from '../api/Products';
 import CheckAgrees from '../components/Pay/molecules/CheckAgrees';
 import OrderInfoBox from '../components/Pay/organisms/OrderInfoBox';
 import queryKey from '../constants/queryKey';
+import staticServerUrl from '../constants/staticUrl';
 
 function Pay() {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ function Pay() {
   });
   useEffect(() => {
     if (!isLogin) {
-      navigate('/login');
+      navigate(staticServerUrl + '/login');
     }
   }, []);
 
