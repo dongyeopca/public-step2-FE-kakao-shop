@@ -7,17 +7,18 @@ import type { RootState } from '../../..';
 import logoKakao from '../../../assets/logoKakao.png';
 import cart from '../../../assets/cart.png';
 import LinkBtn from '../LinkBtn';
+import staticServerUrl from '../../../constants/staticUrl';
 
 function GNB() {
   const dispatch = useDispatch();
   const { isLogin } = useSelector((state: RootState) => state.authReducer);
   return (
     <Wrap>
-      <LinkBtn to="/">
+      <LinkBtn to={staticServerUrl + '/'}>
         <img src={logoKakao} width={80} height={40} alt="카카오 쇼핑 로고" />
       </LinkBtn>
       <NavList>
-        <LinkBtn to="/cart">
+        <LinkBtn to={staticServerUrl + '/cart'}>
           <img src={cart} width={40} height={40} alt="장바구니 로고" className="mr-3" />
         </LinkBtn>
         {isLogin ? (
@@ -25,7 +26,7 @@ function GNB() {
             로그아웃
           </LogoutBtn>
         ) : (
-          <LinkBtn to="/login">로그인</LinkBtn>
+          <LinkBtn to={staticServerUrl + '/login'}>로그인</LinkBtn>
         )}
       </NavList>
     </Wrap>

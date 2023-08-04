@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
 import Spinner from './components/common/atoms/Spinner';
 import SkeletonList from './components/common/molecules/SkeletonList';
+import staticServerUrl from './constants/staticUrl';
 
 const MainPage = lazy(() => import('./pages/Main'));
 const LoginPage = lazy(() => import('./pages/Login'));
@@ -13,8 +14,6 @@ const PayPage = lazy(() => import('./pages/Pay'));
 const PaySuccessPage = lazy(() => import('./pages/PaySuccess'));
 const Page404 = lazy(() => import('./pages/Error404'));
 const Page500 = lazy(() => import('./pages/Error500'));
-
-const staticServerUrl = process.env.REACT_APP_PATH || '';
 
 const router = createBrowserRouter([
   {
