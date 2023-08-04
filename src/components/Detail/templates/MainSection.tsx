@@ -3,6 +3,7 @@ import Picture from '../../common/atoms/Picture';
 import type { Product } from '../../../types/Product';
 import colors from '../../../constants/colors';
 import { styled } from 'styled-components';
+import staticServerUrl from '../../../constants/staticUrl';
 
 interface MainSectionProps extends Product {
   starCount: number;

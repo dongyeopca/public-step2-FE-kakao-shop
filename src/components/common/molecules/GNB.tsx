@@ -14,11 +14,11 @@ function GNB() {
   const { isLogin } = useSelector((state: RootState) => state.authReducer);
   return (
     <Wrap>
-      <LinkBtn to={staticServerUrl + '/'}>
+      <LinkBtn to="/">
         <img src={logoKakao} width={80} height={40} alt="카카오 쇼핑 로고" />
       </LinkBtn>
       <NavList>
-        <LinkBtn to={staticServerUrl + '/cart'}>
+        <LinkBtn to="/cart">
           <img src={cart} width={40} height={40} alt="장바구니 로고" className="mr-3" />
         </LinkBtn>
         {isLogin ? (
@@ -26,7 +26,7 @@ function GNB() {
             로그아웃
           </LogoutBtn>
         ) : (
-          <LinkBtn to={staticServerUrl + '/login'}>로그인</LinkBtn>
+          <LinkBtn to="/login">로그인</LinkBtn>
         )}
       </NavList>
     </Wrap>
