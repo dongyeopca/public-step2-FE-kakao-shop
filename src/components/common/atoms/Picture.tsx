@@ -11,7 +11,7 @@ function Picture({ src, alt, width, height }: PictureProps) {
   return (
     <picture>
       <Wrap width={width} height={height}>
-        <Img src={process.env.REACT_APP_PATH + src} loading="lazy" alt={alt} />
+        <Img src={src} loading="lazy" alt={alt} />
       </Wrap>
     </picture>
   );

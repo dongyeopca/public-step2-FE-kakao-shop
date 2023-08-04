@@ -5,6 +5,7 @@ import ProductDescription from '../atoms/ProductDescription';
 import ProductName from '../atoms/ProductName';
 import ProductPrice from '../atoms/ProductPrice';
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
+import staticServerUrl from '../../../constants/staticUrl';
 
 interface ProductCardProps {
   name: string;
@@ -24,7 +25,7 @@ function ProductCard({ name, image, description, price, isLast, fetchNextPage, h
   }, [isIntersecting]);
   return (
     <Wrap ref={targetRef}>
-      <Picture src={image} width={200} height={200} alt={name + '이미지'} />
+      <Picture src={staticServerUrl + image} width={200} height={200} alt={name + '이미지'} />
       <ProductName>{name}</ProductName>
       <ProductDescription>{description}</ProductDescription>
       <ProductPrice>{price}원~</ProductPrice>
