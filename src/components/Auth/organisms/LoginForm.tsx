@@ -51,7 +51,7 @@ function LoginForm() {
         {errorMessage && <ErrorMessageBox>{errorMessage}</ErrorMessageBox>}
         <SubmitBtn callback={submitHandler}>로그인</SubmitBtn>
       </form>
-      <LinkButton to="/signup">회원가입</LinkButton>
+      <LinkButton to={staticServerUrl + '/signup'}>회원가입</LinkButton>
     </Wrap>
   );
 }

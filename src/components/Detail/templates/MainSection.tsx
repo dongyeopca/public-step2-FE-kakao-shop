@@ -12,7 +12,7 @@ interface MainSectionProps extends Product {
 function MainSection({ description, image, price, starCount, productName }: MainSectionProps) {
   return (
     <Wrap>
-      <Picture src={staticServerUrl + image} alt={productName + '이미지'} width={300} height={300} />
+      <Picture src={staticServerUrl + '/api' + image} alt={productName + '이미지'} width={300} height={300} />
       <Content>
         <Star>{'★'.repeat(starCount)}</Star>
         <Title>{productName}</Title>
