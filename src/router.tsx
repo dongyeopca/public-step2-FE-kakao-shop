@@ -13,9 +13,12 @@ const PayPage = lazy(() => import('./pages/Pay'));
 const PaySuccessPage = lazy(() => import('./pages/PaySuccess'));
 const Page404 = lazy(() => import('./pages/Error404'));
 const Page500 = lazy(() => import('./pages/Error500'));
+
+const staticServerUrl = process.env.REACT_APP_PATH || '';
+
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: staticServerUrl + '/',
     element: <App />,
     children: [
       {
@@ -77,7 +80,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: '/login',
+    path: staticServerUrl + '/login',
     element: (
       <Suspense fallback={<Spinner width={60} height={60} />}>
         <LoginPage />
@@ -85,7 +88,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: '/signup',
+    path: staticServerUrl + '/signup',
     element: (
       <Suspense fallback={<Spinner width={60} height={60} />}>
         <SignupPage />
